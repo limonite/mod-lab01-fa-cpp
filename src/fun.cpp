@@ -12,8 +12,7 @@ unsigned int faStr1(const char* str) {
         if (!flagInWord && str[i] != ' ') {
             flagInWord = true;
             flagDigits = isdigit(str[i]);
-        }
-        else if (flagInWord && str[i] != ' ') {
+        }else if (flagInWord && str[i] != ' ') {
             if (isdigit(str[i]))
                 flagDigits = true;
         }
@@ -26,11 +25,8 @@ unsigned int faStr1(const char* str) {
 
         i++;
     }
-
-    
     return count;
 }
-
 unsigned int faStr2(const char* str) {
     int count = 0;
     bool flagInWord = false;
@@ -40,8 +36,7 @@ unsigned int faStr2(const char* str) {
         if (!flagInWord && str[i] != ' ') {
             flagInWord = true;
             flagGood = isupper(str[i]);
-        }
-        else if (flagInWord && str[i] != ' ') {
+        }else if (flagInWord && str[i] != ' ') {
             if (!islower(str[i]))
                 flagGood = false;
         }
@@ -51,7 +46,6 @@ unsigned int faStr2(const char* str) {
             flagGood = true;
             flagInWord = false;
         }
-
         i++;
     }
     return count;
@@ -67,13 +61,11 @@ unsigned int faStr3(const char* str) {
             flagInWord = true;
             wCount++;
             symbCount++;
-        }
-        else if (flagInWord && str[i] != ' ') {
+        }else if (flagInWord && str[i] != ' ') {
             symbCount++;
         }
         if (flagInWord && (str[i] == ' ' || str[i + 1] == '\0'))
             flagInWord = false;
-
         i++;
     }
     return ((int)round((double)symbCount/wCount));
